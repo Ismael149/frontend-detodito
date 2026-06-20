@@ -1,0 +1,267 @@
+/* 
+  EDIT PROFILE - V6 EXACT "MORE" ALIGNMENT
+  Using IonList + IonItem structure with premium floating card look.
+*/
+
+.edit-profile-content-v6 {
+  --background: var(--ion-background-color) !important;
+}
+
+body.dark .edit-profile-content-v6 {
+  --background: #121212 !important;
+}
+
+/* 1. MORE LIST REPLICATION */
+.more-list {
+  background: transparent !important;
+  padding: 8px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.more-list ion-item {
+  --min-height: 60px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin: 8px 16px;
+  border-radius: 12px;
+  --background: var(--ion-card-background, white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--ion-border-color, rgba(0, 0, 0, 0.05));
+  overflow: visible;
+}
+
+body.dark .more-list ion-item {
+  --background: #1e1e1e !important;
+  --color: #ffffff !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 2. USER-HEADER STYLE (HERO) */
+.user-header.edit-profile-hero {
+  --min-height: 90px;
+  margin: 16px 16px 24px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.edit-avatar-v6 {
+  width: 64px;
+  height: 64px;
+  margin-right: 16px;
+  position: relative;
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .edit-avatar-v6 {
+  border-color: #333;
+}
+
+.camera-overlay {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background: var(--ion-color-primary);
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 2px solid white;
+  z-index: 10;
+}
+
+body.dark .camera-overlay {
+  border-color: #1e1e1e;
+}
+
+.user-header h2 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 1.25rem;
+}
+
+/* 3. SECTION TITLES */
+.section-title {
+  padding: 16px 24px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ion-color-medium);
+}
+
+/* 4. EDIT ITEMS & INPUTS */
+.edit-item-v6 ion-icon[slot="start"] {
+  font-size: 1.3rem;
+  margin-right: 16px;
+  color: var(--ion-color-medium);
+}
+
+.v6-input-field {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.v6-input-field label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ion-color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.v6-input-field input {
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--ion-text-color);
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+
+.v6-date-input {
+  color-scheme: light;
+}
+
+body.dark .v6-date-input {
+  color-scheme: dark;
+}
+
+.edit-profile-v6 .v6-date-input::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* PHONES */
+.v6-phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v6-code-badge {
+  background: rgba(var(--ion-color-primary-rgb), 0.1);
+  color: var(--ion-color-primary);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ERRORS */
+.v6-error-container {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.v6-error-txt {
+  color: var(--ion-color-danger);
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.v6-error-txt::before {
+  content: "!";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  background: var(--ion-color-danger);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.input-error {
+  border-bottom: 1px solid var(--ion-color-danger) !important;
+}
+
+/* Highlight item border on error */
+/* Highlight item border on error */
+.edit-item-v6:has(.has-error),
+.edit-item-v6.item-has-error {
+  border: 1px solid var(--ion-color-danger);
+  background: rgba(var(--ion-color-danger-rgb), 0.05);
+  --background: rgba(var(--ion-color-danger-rgb), 0.05);
+}
+
+body.dark .edit-item-v6:has(.has-error),
+body.dark .edit-item-v6.item-has-error {
+  border-color: var(--ion-color-danger) !important;
+  background: rgba(var(--ion-color-danger-rgb), 0.1) !important;
+  --background: rgba(var(--ion-color-danger-rgb), 0.1) !important;
+}
+
+/* CLICKABLE / SELECTS */
+.clickable-v6 {
+  cursor: pointer;
+}
+
+.v6-label-mini {
+  margin: 0 0 2px 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ion-color-primary);
+  text-transform: uppercase;
+}
+
+.edit-item-v6 h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.v6-absolute-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+}
+
+.v6-chevron {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* 5. ACTION BUTTONS */
+.edit-actions-v6 {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.v6-save-btn {
+  --border-radius: 14px;
+  --box-shadow: 0 4px 12px rgba(var(--ion-color-primary-rgb), 0.2);
+  font-weight: 700;
+  height: 52px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* UTILS */
+.premium-toolbar IonTitle {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}

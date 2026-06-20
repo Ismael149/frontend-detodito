@@ -1,0 +1,368 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+:root {
+    --ion-color-primary: #3880ff;
+    --ion-color-primary-rgb: 56, 128, 255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #3171e0;
+    --ion-color-primary-tint: #4c8dff;
+
+    --ion-color-secondary: #3dc2ff;
+    --ion-color-secondary-rgb: 61, 194, 255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #36abe0;
+    --ion-color-secondary-tint: #50c8ff;
+
+    --ion-color-tertiary: #5260ff;
+    --ion-color-tertiary-rgb: 82, 96, 255;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #4854e0;
+    --ion-color-tertiary-tint: #6370ff;
+
+    --ion-color-success: #2dd36f;
+    --ion-color-success-rgb: 45, 211, 111;
+    --ion-color-success-contrast: #ffffff;
+    --ion-color-success-contrast-rgb: 255, 255, 255;
+    --ion-color-success-shade: #28ba62;
+    --ion-color-success-tint: #42d77d;
+
+    --ion-color-warning: #ffc409;
+    --ion-color-warning-rgb: 255, 196, 9;
+    --ion-color-warning-contrast: #000000;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #e0ad08;
+    --ion-color-warning-tint: #ffca22;
+
+    --ion-color-danger: #eb445a;
+    --ion-color-danger-rgb: 235, 68, 90;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255, 255, 255;
+    --ion-color-danger-shade: #cf3c4f;
+    --ion-color-danger-tint: #ed576b;
+
+    --ion-color-dark: #222428;
+    --ion-color-dark-rgb: 34, 36, 40;
+    --ion-color-dark-contrast: #ffffff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #1e2023;
+    --ion-color-dark-tint: #383a3e;
+
+    --ion-color-medium: #92949c;
+    --ion-color-medium-rgb: 146, 148, 156;
+    --ion-color-medium-contrast: #ffffff;
+    --ion-color-medium-contrast-rgb: 255, 255, 255;
+    --ion-color-medium-shade: #808289;
+    --ion-color-medium-tint: #9d9fa6;
+
+    --ion-color-light: #f4f5f8;
+    --ion-color-light-rgb: 244, 245, 248;
+    --ion-color-light-contrast: #000000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #d7d8da;
+    --ion-color-light-tint: #f5f6f9;
+
+    --ion-background-color: #ffffff;
+    --ion-background-color-rgb: 255, 255, 255;
+    --ion-text-color: #000000;
+    --ion-text-color-rgb: 0, 0, 0;
+    --ion-card-background: #ffffff;
+    --ion-border-color: rgba(0, 0, 0, 0.1);
+
+    /* V8 Premium Card Style Variables */
+    --card-shadow-premium: 0 8px 24px rgba(0, 0, 0, 0.08);
+    /* Stronger shadow for depth */
+    --card-border-premium: 1px solid rgba(0, 0, 0, 0.12);
+    /* Clearer border for definition */
+}
+
+/* ==========================================================================
+   IONIC DARK MODE VARIABLES
+   ========================================================================== */
+
+.dark {
+    /* Primary color palette */
+    --ion-color-primary: #428cff;
+    --ion-color-primary-rgb: 66, 140, 255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #3a7be0;
+    --ion-color-primary-tint: #5598ff;
+
+    /* Background colors */
+    --ion-background-color: #121212;
+    --ion-background-color-rgb: 18, 18, 18;
+
+    /* Text colors */
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+
+    /* Card and surface colors */
+    --ion-card-background: #1e1e1e;
+
+    /* Toolbar colors */
+    --ion-toolbar-background: #1e1e1e;
+    --ion-toolbar-color: #ffffff;
+
+    /* Item colors */
+    --ion-item-background: transparent;
+    --ion-item-color: #ffffff;
+
+    /* Border colors */
+    --ion-border-color: rgba(255, 255, 255, 0.1);
+
+    /* Premium Card Overrides for Dark Mode (Subtle to match dark theme) */
+    --card-shadow-premium: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --card-border-premium: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Tab bar */
+    --ion-tab-bar-background: #1e1e1e;
+    --ion-tab-bar-color: #b0b0b0;
+    --ion-tab-bar-color-selected: #ffffff;
+
+    /* Step colors for grays */
+    --ion-color-step-50: #1e1e1e;
+    --ion-color-step-100: #2a2a2a;
+    --ion-color-step-150: #363636;
+    --ion-color-step-200: #414141;
+    --ion-color-step-250: #4d4d4d;
+    --ion-color-step-300: #595959;
+    --ion-color-step-350: #656565;
+    --ion-color-step-400: #717171;
+    --ion-color-step-450: #7d7d7d;
+    --ion-color-step-500: #898989;
+    --ion-color-step-550: #949494;
+    --ion-color-step-600: #a0a0a0;
+    --ion-color-step-650: #acacac;
+    --ion-color-step-700: #b8b8b8;
+    --ion-color-step-750: #c4c4c4;
+    --ion-color-step-800: #d0d0d0;
+    --ion-color-step-850: #dbdbdb;
+    --ion-color-step-900: #e7e7e7;
+    --ion-color-step-950: #f3f3f3;
+
+    /* Medium color */
+    --ion-color-medium: #b0b0b0;
+    --ion-color-medium-rgb: 176, 176, 176;
+    --ion-color-medium-contrast: #000000;
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #9b9b9b;
+    --ion-color-medium-tint: #b8b8b8;
+
+    /* Light color */
+    --ion-color-light: #2a2a2a;
+    --ion-color-light-rgb: 42, 42, 42;
+    --ion-color-light-contrast: #ffffff;
+    --ion-color-light-contrast-rgb: 255, 255, 255;
+    --ion-color-light-shade: #252525;
+    --ion-color-light-tint: #3f3f3f;
+
+    /* Dark color */
+    --ion-color-dark: #f4f5f8;
+    --ion-color-dark-rgb: 244, 245, 248;
+    --ion-color-dark-contrast: #000000;
+    --ion-color-dark-contrast-rgb: 0, 0, 0;
+    --ion-color-dark-shade: #d7d8da;
+    --ion-color-dark-tint: #f5f6f9;
+
+    /* Segment specific variables (Force transparent backgrounds and correct colors) */
+    --ion-segment-background: #1a1a1a;
+    --ion-segment-button-color: #888;
+    --ion-segment-button-color-checked: #ffffff;
+    --ion-segment-indicator-color: var(--ion-color-primary);
+    --ion-segment-background-checked: transparent;
+}
+
+/* Global Fix for Segment Buttons in Dark Mode to avoid white background */
+.dark ion-segment-button {
+    --background: transparent !important;
+    --background-checked: transparent !important;
+    --color: #888 !important;
+    --color-checked: #ffffff !important;
+}
+
+/* Specific for iOS mode where the indicator IS the background pill */
+.dark ion-segment[mode="ios"] {
+    --background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark ion-segment[mode="ios"] ion-segment-button.segment-button-checked {
+    --indicator-color: var(--ion-color-primary) !important;
+    --color-checked: #ffffff !important;
+}
+
+/* Fix for Android/MD if still used anywhere accidentally */
+.dark ion-segment:not([mode="ios"]) {
+    --indicator-color: var(--ion-color-primary) !important;
+}
+
+/* Global Transparency Overrides for Navigation - Consolidated in Navigation.css */
+:root {
+    --ion-safe-area-bottom: 0px !important;
+}
+
+/* Global Out of Stock visual indicators */
+.out-of-stock {
+  opacity: 0.55;
+  filter: grayscale(80%);
+}
+
+.out-of-stock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   TARJETAS DE PRODUCTOS GLOBALMENTE UNIFICADAS (Iguales a "Porque te interesa")
+   ========================================================================== */
+.product-card {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: white;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.product-card:active {
+  transform: scale(0.98);
+}
+
+.product-card .product-image-container {
+  width: 100%;
+  padding-top: 100%; /* Relación de aspecto 1:1 exacta */
+  position: relative;
+  overflow: hidden;
+  background: #f9f9f9;
+  flex-shrink: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.product-card .product-image-container .product-image2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.product-card:hover .product-image2 {
+  transform: scale(1.05);
+}
+
+.product-card ion-card-content {
+  padding: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card .product-name1 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 34px;
+}
+
+.product-card .product-description1 {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 14px;
+}
+
+.product-card .product-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.product-card .product-discount {
+  font-size: 11px;
+  color: #00a650;
+  font-weight: 600;
+  margin: 4px 0 0 0;
+}
+
+.product-card .product-image-container .discount-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--ion-color-danger);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de valoraciones */
+.product-rating-row-simple {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin: 4px 0 !important;
+}
+
+.star-yellow {
+  color: #ffc409 !important;
+  font-size: 12px !important;
+}
+
+.rating-number {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #666 !important;
+}
+
+/* Tarjeta de producto para scroll horizontal */
+.scroll-card {
+  min-width: 145px !important;
+  max-width: 145px !important;
+  flex-shrink: 0 !important;
+  margin: 4px 2px !important;
+}

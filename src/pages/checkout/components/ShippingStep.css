@@ -1,0 +1,78 @@
+.shipping-step {
+  padding: 16px;
+}
+
+.empty-addresses {
+  text-align: center;
+  padding: 20px;
+}
+
+.shipping-details {
+  padding: 12px 0;
+}
+
+.shipping-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ion-color-light-shade);
+}
+
+.shipping-row:last-child {
+  border-bottom: none;
+}
+
+.cost-summary {
+  padding: 12px 0;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ion-color-light-shade);
+}
+
+.cost-row.total {
+  border-bottom: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+}
+
+.shipping-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.calculating-shipping,
+.no-shipping-info {
+  text-align: center;
+  padding: 20px;
+  color: var(--ion-color-medium);
+}
+
+.card-details {
+  display: flex;
+  gap: 12px;
+}
+
+.card-details ion-item {
+  flex: 1;
+}
+
+.transfer-info,
+.cash-info {
+  background: var(--ion-color-light);
+  padding: 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.transfer-info p,
+.cash-info p {
+  margin: 4px 0;
+}

@@ -1,0 +1,444 @@
+/* AdminOrders.css - Standardized Design System */
+
+/* Base Variables */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Container */
+.admin-orders-page {
+  --background: #f4f5f8;
+  padding-bottom: 0 !important;
+}
+
+/* Filters Toolbar in Header */
+.filters-toolbar {
+  --background: #f8f9fa !important;
+  background: #f8f9fa !important;
+  --border-width: 0 0 1px 0;
+  --border-color: #eee;
+  --padding-top: 10px;
+  --padding-bottom: 12px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  min-height: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filters-container-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filters-toolbar ion-searchbar {
+  --background: #fff;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  padding: 0;
+  margin: 0;
+}
+
+.filter-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.date-filter-btn {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  height: 32px;
+  font-size: 13px;
+  margin: 0;
+}
+
+body.dark .filters-toolbar {
+  --background: #1a1a1a !important;
+  background: #1a1a1a !important;
+  --border-color: #333;
+}
+
+body.dark .filters-toolbar ion-searchbar {
+  --background: #2c2c2c;
+  --color: white;
+}
+
+/* Orders List */
+.orders-list {
+  padding: 16px;
+  padding-bottom: 20px;
+}
+
+/* Order Card */
+.order-card {
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.order-id {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Order Body */
+.order-body {
+  padding: 16px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.order-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-info-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.order-info-value {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.order-status-chip {
+  align-self: flex-start;
+  margin: 0;
+  height: 28px;
+}
+
+.order-status-chip ion-icon {
+  font-size: 1.1rem;
+  margin-right: 4px;
+}
+
+.order-status-chip ion-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.order-details ion-text small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.order-details strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  color: var(--ion-color-primary);
+}
+
+/* Order Customer */
+.order-customer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.order-customer ion-icon {
+  font-size: 1.25rem;
+  color: #667eea;
+}
+
+.order-customer-info {
+  flex: 1;
+}
+
+.order-customer-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.order-customer-email {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Order Total */
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f0f7ff;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.order-total-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.order-total-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+/* Order Status Badge */
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.order-status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.order-status.processing {
+  background: #cfe2ff;
+  color: #084298;
+}
+
+.order-status.shipped {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.order-status.delivered {
+  background: #d1f4e0;
+  color: #229954;
+}
+
+.order-status.cancelled {
+  background: #ffd4d4;
+  color: #c0392b;
+}
+
+/* Order Actions */
+.order-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.order-actions ion-button {
+  flex: 1;
+  height: 36px;
+  font-size: 0.85rem;
+  --border-radius: 8px;
+}
+
+/* Order Items */
+.order-items {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.order-items-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.85rem;
+}
+
+.order-item-name {
+  color: #1a1a1a;
+}
+
+.order-item-quantity {
+  color: #666;
+}
+
+/* Loading & Empty States */
+.loading-container,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading-container ion-spinner {
+  --color: #667eea;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state ion-icon {
+  font-size: 4rem;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Pagination */
+.pagination-info {
+  text-align: center;
+  padding: 16px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .order-info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .order-actions {
+    flex-direction: column;
+  }
+
+  .order-actions ion-button {
+    width: 100%;
+  }
+}
+
+body.dark .admin-orders-page {
+  --background: #121212;
+}
+
+body.dark .filters-section {
+  background: #1e1e1e;
+  border-bottom-color: #333;
+}
+
+body.dark .filters-section ion-searchbar {
+  --background: #2a2a2a;
+}
+
+body.dark .filters-section ion-select {
+  --background: #2a2a2a;
+}
+
+body.dark .order-card {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .order-header {
+  background: #252525;
+  border-bottom-color: #333;
+}
+
+body.dark .order-id,
+body.dark .order-info-value,
+body.dark .order-customer-name {
+  color: white;
+}
+
+body.dark .order-date,
+body.dark .order-info-label,
+body.dark .order-customer-email {
+  color: #aaa;
+}
+
+body.dark .order-customer {
+  background: #252525;
+}
+
+body.dark .order-total {
+  background: #1a2332;
+}
+
+body.dark .order-items {
+  border-top-color: #333;
+}
+
+body.dark .order-item-name {
+  color: white;
+}
+
+body.dark .order-item-quantity {
+  color: #aaa;
+}
+
+body.dark .order-actions {
+  border-top-color: #333;
+}
+
+body.dark .empty-state p {
+  color: #aaa;
+}

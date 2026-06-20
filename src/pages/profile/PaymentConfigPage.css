@@ -1,0 +1,501 @@
+/* 
+  PAYMENT CONFIG PAGE - PREMIUM ALIGNMENT
+  Definitive fix for focus bugs using standard HTML elements.
+*/
+
+:root {
+  --pay-bg-light: #f4f5f8;
+  --pay-card-bg-light: #ffffff;
+  --pay-input-bg-light: #f4f5f8;
+  --pay-text-light: #000000;
+  --pay-label-light: #666666;
+  --pay-border-light: rgba(0, 0, 0, 0.05);
+
+  --pay-bg-dark: #121212;
+  --pay-card-bg-dark: #1e1e1e;
+  --pay-input-bg-dark: #2a2a2a;
+  --pay-text-dark: #ffffff;
+  --pay-label-dark: #b0b0b0;
+  --pay-border-dark: rgba(255, 255, 255, 0.1);
+}
+
+.payment-config-page-container {
+  --background: var(--pay-bg-light);
+}
+
+body.dark .payment-config-page-container {
+  --background: var(--pay-bg-dark);
+}
+
+/* Page Headers */
+.premium-toolbar {
+  --background: var(--pay-card-bg-light);
+  --color: var(--pay-text-light);
+  --border-width: 0;
+}
+
+body.dark .premium-toolbar {
+  --background: var(--pay-card-bg-dark);
+  --color: var(--pay-text-dark);
+}
+
+/* Content Area */
+.payment-content-area {
+  --padding-top: 16px;
+  --padding-bottom: 32px;
+}
+
+.form-wrapper-universal {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.glass-form-card {
+  margin: 8px 16px;
+  border-radius: 12px;
+  background: var(--pay-card-bg-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--pay-border-light);
+  padding: 8px;
+}
+
+body.dark .glass-form-card {
+  background: var(--pay-card-bg-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--pay-border-dark);
+}
+
+/* Intro Group */
+.form-intro-compact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 8px;
+}
+
+.intro-icon-premium {
+  font-size: 2rem;
+  color: var(--ion-color-primary);
+}
+
+.intro-text-group h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--pay-text-light);
+}
+
+body.dark .intro-text-group h2 {
+  color: var(--pay-text-dark);
+}
+
+.intro-text-group p {
+  margin: 2px 0 0 0;
+  font-size: 0.9rem;
+  color: var(--pay-label-light);
+}
+
+body.dark .intro-text-group p {
+  color: var(--pay-label-dark);
+}
+
+/* Grid & Inputs */
+.modern-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 8px;
+}
+
+.modern-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pay-label-light);
+  padding-left: 2px;
+}
+
+body.dark .field-label {
+  color: var(--pay-label-dark);
+}
+
+/* Standard HTML Elements styling - Bypasses framework bugs */
+.premium-html-input,
+.premium-html-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--pay-border-light);
+  background: var(--pay-input-bg-light);
+  color: var(--pay-text-light);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+body.dark .premium-html-input,
+body.dark .premium-html-select {
+  background: var(--pay-input-bg-dark);
+  color: var(--pay-text-dark);
+  border: 1px solid var(--pay-border-dark);
+}
+
+/* Focus States - ABSOLUTE THEME PERSISTENCE */
+.premium-html-input:focus,
+.premium-html-select:focus {
+  border-color: var(--ion-color-primary);
+  box-shadow: 0 0 0 2px rgba(var(--ion-color-primary-rgb), 0.1);
+  background: #ffffff;
+}
+
+.premium-html-input.has-error,
+.premium-html-select.has-error {
+  border: 1px solid var(--ion-color-danger);
+  background: rgba(var(--ion-color-danger-rgb), 0.05);
+}
+
+body.dark .premium-html-input.has-error,
+body.dark .premium-html-select.has-error {
+  border: 1px solid var(--ion-color-danger) !important;
+  background: rgba(var(--ion-color-danger-rgb), 0.1) !important;
+}
+
+.input-error-message {
+  color: var(--ion-color-danger);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+body.dark .premium-html-input:focus,
+body.dark .premium-html-select:focus {
+  background: var(--pay-input-bg-dark) !important;
+  border-color: var(--ion-color-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Row Layouts */
+.form-split-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-split-row .half {
+  flex: 1;
+}
+
+/* Toggle Styling */
+.premium-toggle-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 8px 8px 8px;
+  padding: 12px 16px;
+  background: var(--pay-input-bg-light);
+  border-radius: 12px;
+  border: 1px solid var(--pay-border-light);
+}
+
+body.dark .premium-toggle-section {
+  background: var(--pay-input-bg-dark);
+  border-color: var(--pay-border-dark);
+}
+
+.toggle-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pay-text-light);
+}
+
+body.dark .toggle-info h3 {
+  color: var(--pay-text-dark);
+}
+
+.toggle-info p {
+  margin: 2px 0 0 0;
+  font-size: 0.85rem;
+  color: var(--pay-label-light);
+}
+
+body.dark .toggle-info p {
+  color: var(--pay-label-dark);
+}
+
+/* Security Notice */
+.security-notice-simple {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 8px 0 8px;
+  padding: 12px;
+  background: rgba(var(--ion-color-success-rgb), 0.05);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--ion-color-success);
+}
+
+.lock-icon {
+  font-size: 1.2rem;
+}
+
+/* Action Button */
+.premium-submit-button-html {
+  margin: 24px 8px 12px 8px;
+  width: calc(100% - 16px);
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: var(--ion-color-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(var(--ion-color-primary-rgb), 0.2);
+}
+
+.premium-submit-button-html:active {
+  transform: scale(0.98);
+}
+
+.premium-submit-button-html:disabled {
+  opacity: 0.5;
+}
+
+/* Card Type Label */
+.card-hint {
+  padding-top: 4px;
+  text-align: right;
+}
+
+.card-type-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--ion-color-primary);
+  letter-spacing: 0.5px;
+}
+
+.disabled-field {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+}
+
+/* Registered Items Section */
+.registered-items-section {
+  margin: 32px 16px 16px 16px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--pay-border-light);
+}
+
+body.dark .registered-items-section {
+  border-top-color: var(--pay-border-dark);
+}
+
+.section-header-premium {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-header-premium h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pay-text-light);
+}
+
+body.dark .section-header-premium h3 {
+  color: var(--pay-text-dark);
+}
+
+.registered-items-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.registered-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--pay-card-bg-light);
+  border-radius: 12px;
+  border: 1px solid var(--pay-border-light);
+  transition: all 0.2s ease;
+}
+
+body.dark .registered-item-card {
+  background: var(--pay-card-bg-dark);
+  border-color: var(--pay-border-dark);
+}
+
+.registered-item-card.active-editing {
+  border-color: var(--ion-color-primary);
+  background: rgba(var(--ion-color-primary-rgb), 0.05);
+  box-shadow: 0 0 0 2px rgba(var(--ion-color-primary-rgb), 0.1);
+}
+
+.item-icon-wrapper {
+  margin-right: 16px;
+}
+
+.card-brand-icon {
+  font-size: 1.8rem;
+  color: var(--pay-label-light);
+}
+
+body.dark .card-brand-icon {
+  color: var(--pay-label-dark);
+}
+
+.card-brand-icon.visa {
+  color: #1a1f71;
+}
+
+.card-brand-icon.mastercard {
+  color: #eb001b;
+}
+
+.card-brand-icon.amex {
+  color: #007bc1;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.item-title-row strong {
+  font-size: 1rem;
+  color: var(--pay-text-light);
+}
+
+body.dark .item-title-row strong {
+  color: var(--pay-text-dark);
+}
+
+.default-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(var(--ion-color-success-rgb), 0.1);
+  color: var(--ion-color-success);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.item-details {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--pay-text-light);
+}
+
+body.dark .item-details {
+  color: var(--pay-text-dark);
+}
+
+.item-sub-details {
+  margin: 2px 0 0 0;
+  font-size: 0.8rem;
+  color: var(--pay-label-light);
+}
+
+body.dark .item-sub-details {
+  color: var(--pay-label-dark);
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--pay-input-bg-light);
+  color: var(--pay-label-light);
+}
+
+body.dark .action-btn {
+  background: var(--pay-input-bg-dark);
+  color: var(--pay-label-dark);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.action-btn.edit:hover {
+  background: var(--ion-color-primary);
+  color: white;
+}
+
+.action-btn.delete:hover {
+  background: var(--ion-color-danger);
+  color: white;
+}
+
+.empty-items-placeholder {
+  text-align: center;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  border: 1px dashed var(--pay-border-light);
+}
+
+body.dark .empty-items-placeholder {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--pay-border-dark);
+}
+
+.empty-items-placeholder p {
+  margin: 0;
+  color: var(--pay-label-light);
+  font-size: 0.9rem;
+}
+
+body.dark .empty-items-placeholder p {
+  color: var(--pay-label-dark);
+}
+
+/* Responsive Grid */
+@media (max-width: 480px) {
+  .form-split-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .form-split-row .half {
+    flex: 1 1 40%;
+  }
+}

@@ -1,0 +1,42 @@
+.confirmation-step {
+  padding: 16px;
+}
+
+.success-card {
+  text-align: center;
+  background: linear-gradient(135deg, var(--ion-color-success) 0%, var(--ion-color-success-tint) 100%);
+  color: white;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.success-card h2 {
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+.success-card p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.order-summary {
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.invoice-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.confirmation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}

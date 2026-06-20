@@ -1,0 +1,148 @@
+/* PrivacySettings.css - Reconstruido desde cero */
+.privacy-page-v5 {
+  --background: var(--ion-background-color);
+}
+
+.privacy-container {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.privacy-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ion-color-medium);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 24px 8px 12px 8px;
+}
+
+.privacy-option-card {
+  background: var(--ion-card-background, rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--ion-color-dark-rgb), 0.08);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  padding: 16px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.privacy-option-card.clickable:active {
+  transform: scale(0.98);
+  background: rgba(var(--ion-color-primary-rgb), 0.05);
+}
+
+.privacy-option-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.privacy-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(var(--ion-color-primary-rgb), 0.1);
+  color: var(--ion-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.privacy-icon-wrapper.danger {
+  background: rgba(var(--ion-color-danger-rgb), 0.1);
+  color: var(--ion-color-danger);
+}
+
+.privacy-icon-wrapper.success {
+  background: rgba(var(--ion-color-success-rgb), 0.1);
+  color: var(--ion-color-success);
+}
+
+.privacy-text-info {
+  flex: 1;
+}
+
+.privacy-text-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ion-text-color);
+}
+
+.privacy-text-info p {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+}
+
+.danger-text {
+  color: var(--ion-color-danger) !important;
+}
+
+.privacy-modal-content {
+  padding: 24px;
+  text-align: center;
+}
+
+.privacy-modal-header {
+  margin-bottom: 20px;
+}
+
+.privacy-modal-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.privacy-modal-body {
+  margin-bottom: 24px;
+}
+
+.privacy-textarea {
+  --background: var(--ion-color-light);
+  --padding-start: 12px;
+  --padding-end: 12px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.privacy-modal-footer {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-privacy {
+  flex: 1;
+  height: 48px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-privacy.cancel {
+  background: var(--ion-color-light);
+  color: var(--ion-color-dark);
+}
+
+.btn-privacy.confirm {
+  background: var(--ion-color-primary);
+  color: white;
+}
+
+.btn-privacy.danger-bg {
+  background: var(--ion-color-danger);
+  color: white;
+}
+
+/* Custom modal styles for premium look */
+.privacy-settings-modal {
+  --height: auto;
+  --border-radius: 20px;
+}

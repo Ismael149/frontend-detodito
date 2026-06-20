@@ -1,0 +1,320 @@
+/* AdminUsers.css - Standardized Design System */
+
+/* Base Variables */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Container */
+.admin-users {
+  --background: #f4f5f8;
+  padding-bottom: 0 !important;
+}
+
+/* Filters Toolbar in Header */
+.filters-toolbar {
+  --background: #f8f9fa !important;
+  background: #f8f9fa !important;
+  --border-width: 0 0 1px 0;
+  --border-color: #eee;
+  --padding-top: 4px;
+  --padding-bottom: 4px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  min-height: auto;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.filters-toolbar ion-searchbar {
+  --background: #fff;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  padding: 0;
+  margin: 0;
+}
+
+body.dark .filters-toolbar {
+  --background: #1a1a1a !important;
+  background: #1a1a1a !important;
+  --border-color: #333;
+}
+
+body.dark .filters-toolbar ion-searchbar {
+  --background: #2c2c2c;
+  --color: white;
+}
+
+/* Users Container */
+.users-container {
+  padding: 16px;
+  padding-bottom: 0 !important;
+}
+
+/* Users Grid */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+/* User Card */
+.user-card {
+  margin: 0;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+}
+
+.user-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+/* Avatar */
+.user-avatar-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-avatar-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+/* User Info */
+.user-info {
+  width: 100%;
+}
+
+.user-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 8px 0;
+  word-break: break-word;
+}
+
+.user-role {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.user-role.admin {
+  background: #667eea;
+  color: white;
+}
+
+.user-role.seller {
+  background: #2dd36f;
+  color: white;
+}
+
+.user-role.customer {
+  background: #92949c;
+  color: white;
+}
+
+/* User Stats */
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 12px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 8px 0;
+}
+
+.user-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.user-stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.user-stat-label {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* User Actions */
+.user-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.user-actions ion-button {
+  flex: 1;
+  height: 36px;
+  font-size: 0.85rem;
+  --border-radius: 8px;
+}
+
+/* Status Badge */
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.active {
+  background: #d1f4e0;
+  color: #229954;
+}
+
+.status-badge.inactive {
+  background: #ffd4d4;
+  color: #c0392b;
+}
+
+/* Loading & Empty States */
+.loading-container,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading-container ion-spinner {
+  --color: #667eea;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state ion-icon {
+  font-size: 4rem;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .users-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .user-card-content {
+    padding: 16px;
+  }
+
+  .user-avatar-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-name {
+    font-size: 1rem;
+  }
+
+  .user-email {
+    font-size: 0.8rem;
+  }
+
+  .user-actions ion-button {
+    font-size: 0.8rem;
+    height: 32px;
+  }
+}
+
+body.dark .admin-users {
+  --background: #121212;
+}
+
+body.dark .filters-section {
+  background: #1e1e1e;
+  border-bottom-color: #333;
+}
+
+body.dark .filters-section ion-searchbar {
+  --background: #2a2a2a;
+}
+
+body.dark .filters-section ion-select {
+  --background: #2a2a2a;
+}
+
+body.dark .user-card {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .user-name,
+body.dark .user-stat-value {
+  color: white;
+}
+
+body.dark .user-email,
+body.dark .user-stat-label {
+  color: #aaa;
+}
+
+body.dark .user-stats {
+  border-top-color: #333;
+  border-bottom-color: #333;
+}
+
+body.dark .empty-state p {
+  color: #aaa;
+}

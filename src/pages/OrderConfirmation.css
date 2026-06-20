@@ -1,0 +1,39 @@
+.confirmation-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.success-icon {
+  text-align: center;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.success-icon ion-icon {
+  font-size: 80px;
+}
+
+.action-buttons {
+  margin-top: 30px;
+}
+
+.action-buttons ion-button {
+  margin-bottom: 10px;
+}
+
+.success-message {
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background: var(--ion-color-success-tint);
+  border-radius: 8px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.p-4 {
+  padding: 16px;
+}

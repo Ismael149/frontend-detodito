@@ -1,0 +1,211 @@
+/* refined Opinions styling */
+.product-opinions-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.opinions-section-header {
+  padding: 0 16px;
+}
+
+.opinions-section-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.new-opinion-card {
+  margin: 0 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.new-opinion-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.rating-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-input-star {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.opinions-list {
+  padding: 0 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment-item {
+  background: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 12px !important;
+  padding: 18px 16px 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  position: relative !important;
+}
+
+.comment-date-corner {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 11px;
+  color: #999;
+  font-weight: 500;
+}
+
+.comment-item.reply {
+  margin-left: 20px !important;
+  margin-top: -6px !important;
+  border-left: 3px solid var(--ion-color-primary) !important;
+  background: #fcfcfc !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+.comment-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.comment-avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+}
+
+.comment-user-info {
+  flex: 1;
+}
+
+.comment-user-info h4 {
+  margin: 0 0 2px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.comment-meta {
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating-stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.rating-stars ion-icon {
+  font-size: 12px;
+}
+
+.comment-header-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.comment-header-actions ion-button {
+  --padding-start: 4px;
+  --padding-end: 4px;
+  height: 28px;
+  margin: 0;
+}
+
+.comment-body-content p {
+  margin: 0;
+  line-height: 1.5;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.replies-toggle ion-button {
+  --padding-start: 0;
+  font-size: 0.8rem;
+  height: 24px;
+  margin-top: 8px;
+}
+
+.reply-form-area {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reply-btn-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.empty-opinions {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+}
+
+/* Dark Mode Overrides */
+body.dark .new-opinion-card,
+body.dark .comment-item {
+  background: #1e1e1e !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark .comment-item.reply {
+  background: #252525 !important;
+}
+
+body.dark .comment-user-info h4,
+body.dark .opinions-section-header h2 {
+  color: #fff !important;
+}
+
+body.dark .comment-body-content p {
+  color: #ddd !important;
+}
+
+body.dark .comment-meta {
+  color: #aaa !important;
+}
+
+/* Pagination styles */
+.load-more-comments {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.show-more-btn {
+  --color: var(--ion-color-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
+body.dark .show-more-btn {
+  --color: #818cf8;
+}

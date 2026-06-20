@@ -1,0 +1,283 @@
+.notifications-page {
+  --background: var(--ion-background-color);
+}
+
+.notifications-header ion-toolbar {
+  --background: var(--ion-background-color) !important;
+  --color: var(--ion-text-color) !important;
+  --border-color: rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Ensure the first toolbar (title) still gets the theme color if we want it */
+.notifications-header ion-toolbar:first-child {
+  --background: rgba(230, 230, 234, 0.98) !important;
+  backdrop-filter: blur(25px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+}
+
+.header-back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* Tabs */
+.notifications-page ion-segment {
+  background: transparent;
+  padding: 8px;
+}
+
+.notifications-page ion-segment-button {
+  --indicator-color: var(--ion-color-primary);
+  --color: var(--ion-text-color-medium);
+  --color-checked: var(--ion-text-color);
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+body.dark .notifications-page ion-segment-button {
+  --color: #777;
+  --color-checked: #fff;
+}
+
+.tab-badge {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Actions Header */
+.notifications-actions {
+  background: var(--ion-background-color);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ion-border-color, rgba(255, 255, 255, 0.1));
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notifications-actions ion-button {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  --color: var(--ion-color-primary);
+}
+
+/* List & Items - Glassmorphism Feel */
+.notifications-list {
+  background: transparent;
+  padding: 10px;
+}
+
+.notification-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --background: var(--ion-card-background, #ffffff);
+  --border-color: transparent;
+  --border-radius: 16px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.notification-item.unread {
+  --background: var(--ion-item-background, #f4f7ff);
+  border-left: 4px solid var(--ion-color-primary);
+}
+
+.notification-item.read {
+  opacity: 0.9;
+}
+
+.notification-item:last-child {
+  margin-bottom: 80px;
+}
+
+/* Text Colors */
+.notification-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ion-text-color, #1a1a1a);
+  line-height: 1.4;
+}
+
+.notification-message p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: var(--ion-text-color-step-300, #444);
+  line-height: 1.5;
+}
+
+.notification-time {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ion-text-color-step-450, #666);
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+/* Icon Styles */
+.notification-icon {
+  --size: 48px;
+  --border-radius: 14px;
+  background: var(--ion-color-light, rgba(255, 255, 255, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-icon ion-icon {
+  font-size: 24px;
+}
+
+/* Action Button Inside Item */
+.notification-action {
+  margin-top: 12px;
+  height: 32px;
+  --border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  --border-color: var(--ion-color-primary);
+  --color: var(--ion-color-primary);
+}
+
+/* Image Attachment */
+.notification-image-container {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification-attachment-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Unread Dot */
+.unread-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ion-color-primary);
+  box-shadow: 0 0 8px var(--ion-color-primary);
+}
+
+.archive-btn {
+  --color: var(--ion-text-color-step-300, #999);
+}
+
+.archive-btn:hover {
+  --color: var(--ion-text-color);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--ion-text-color-step-300, #888);
+}
+
+.empty-state ion-icon {
+  font-size: 72px;
+  margin-bottom: 24px;
+  color: var(--ion-text-color-step-600, #444);
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ion-text-color);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 15px;
+  color: var(--ion-text-color-step-200);
+}
+
+/* Ion Infinite Scroll */
+ion-infinite-scroll-content {
+  --color: var(--ion-text-color-step-400);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notification-item {
+  animation: slideIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Dark Mode Overrides */
+.dark.notifications-page,
+.dark .notifications-page {
+  --background: #121212 !important;
+}
+
+.dark .notifications-actions,
+.dark .notifications-header ion-toolbar,
+.dark ion-header ion-toolbar {
+  --background: #121212 !important;
+  --border-color: #333 !important;
+  --color: #ffffff !important;
+}
+
+.dark .notification-item {
+  --background: #1e1e1e !important;
+  --border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .notification-item.unread {
+  --background: #252525 !important;
+}
+
+.dark .notification-title h3 {
+  color: #ffffff !important;
+}
+
+.dark .notification-message p {
+  color: #b0b0b0 !important;
+}
+
+.dark .notification-icon {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .empty-state h3 {
+  color: #ffffff !important;
+}
+
+.dark .empty-state p {
+  color: #aaaaaa !important;
+}

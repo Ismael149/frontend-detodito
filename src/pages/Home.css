@@ -1,0 +1,29 @@
+ion-card {
+  text-align: center;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ion-card-header {
+  padding-bottom: 0;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--ion-color-light);
+  border-radius: 12px;
+}
+
+.welcome-message h2 {
+  color: var(--ion-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.welcome-message p {
+  color: var(--ion-color-medium);
+  line-height: 1.5;
+}

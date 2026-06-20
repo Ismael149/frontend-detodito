@@ -1,0 +1,142 @@
+/* Profile.css - Card Style Fix */
+.profile-content {
+  --background: var(--ion-background-color) !important;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-list {
+  background: transparent !important;
+  padding: 8px 0;
+}
+
+.profile-header {
+  --min-height: 100px;
+  --background: var(--ion-card-background, white);
+  margin: 16px 16px 24px 16px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  background: var(--ion-color-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--ion-text-color);
+}
+
+.menu-section-title {
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ion-color-medium);
+  margin-top: 16px;
+}
+
+.divider {
+  height: 24px;
+  background: transparent;
+}
+
+.profile-list ion-item {
+  --min-height: 60px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin: 8px 16px;
+  /* Spacing from edges */
+  border-radius: 12px;
+  --background: var(--ion-card-background, white);
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+}
+
+.profile-list ion-icon[slot="start"] {
+  font-size: 1.4rem;
+  margin-right: 16px;
+}
+
+.profile-list h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ion-text-color);
+  margin-bottom: 4px;
+}
+
+.profile-list ion-note {
+  font-size: 0.9rem;
+}
+
+/* Account Info Card */
+.account-info {
+  padding: 20px;
+  background: var(--ion-card-background, white);
+  margin: 16px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow-premium);
+}
+
+.account-detail {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: var(--ion-text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Not Authenticated State */
+.not-authenticated {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ion-color-medium);
+}
+
+.not-authenticated ion-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: var(--ion-color-light);
+}
+
+/* Dark Mode Overrides */
+body.dark .profile-content {
+  --background: #121212 !important;
+}
+
+body.dark .profile-list ion-item,
+body.dark .profile-header,
+body.dark .account-info {
+  --background: #1e1e1e !important;
+  --color: #ffffff !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark .profile-name,
+body.dark .profile-list h3 {
+  color: #ffffff !important;
+}
+
+body.dark .account-detail {
+  color: #e0e0e0;
+}
+
+body.dark .profile-list ion-item:hover {
+  --background: #252525;
+}
+
+body.dark .not-authenticated ion-icon {
+  color: #333;
+}

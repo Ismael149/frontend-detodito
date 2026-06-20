@@ -1,0 +1,112 @@
+.payment-methods-page {
+  --background: #f8f9fa;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ion-color-medium);
+}
+
+.empty-state ion-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  color: var(--ion-color-light);
+}
+
+.empty-state h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  color: var(--ion-color-dark);
+}
+
+.empty-state p {
+  margin: 0 0 30px 0;
+  font-size: 1rem;
+}
+
+.payment-method-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 80px;
+  border-bottom: 1px solid var(--ion-color-light-shade);
+}
+
+.payment-method-item:last-child {
+  border-bottom: none;
+}
+
+.payment-method-item ion-icon[slot="start"] {
+  font-size: 2rem;
+  margin-right: 16px;
+}
+
+.payment-method-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.payment-method-actions ion-button {
+  --padding-start: 6px;
+  --padding-end: 6px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+}
+
+/* Formulario */
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-col {
+  flex: 1;
+}
+
+.security-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  background: var(--ion-color-light);
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.security-notice ion-icon {
+  font-size: 1.2rem;
+}
+
+/* Badge para tarjeta principal */
+ion-badge {
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .payment-method-actions {
+    flex-direction: column;
+  }
+  
+  .payment-method-item {
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .payment-methods-page {
+    --background: #1a1a1a;
+  }
+  
+  .security-notice {
+    background: #2d2d2d;
+  }
+}

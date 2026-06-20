@@ -1,0 +1,210 @@
+/* Navigation.css - Simple Anchored Bottom Tab Bar */
+
+.anchored-tab-bar {
+    --border: none !important;
+    border: none !important;
+    background: rgba(230, 230, 234, 0.98) !important;
+    /* Noticeably darker light-gray */
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    height: 60px !important;
+    z-index: 99999;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+    /* Slightly more visible separation */
+}
+
+.dark .anchored-tab-bar {
+    background: rgba(15, 15, 15, 0.98) !important;
+    border: none !important;
+}
+
+/* Global Header Styling - Light Mode Sync */
+ion-header ion-toolbar {
+    --background: rgba(230, 230, 234, 0.98) !important;
+    --color: var(--ion-text-color);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    --border-width: 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark ion-header ion-toolbar {
+    --background: rgba(30, 30, 30, 0.98) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 👑 Admin Exclusive Header Styling */
+/* We target standard admin pages using the class in IonContent */
+.admin-dashboard-page ion-header ion-toolbar,
+.admin-products-page ion-header ion-toolbar,
+.admin-users-page ion-header ion-toolbar,
+.admin-categories-page ion-header ion-toolbar,
+.admin-orders-page ion-header ion-toolbar,
+.admin-activity-logs-page ion-header ion-toolbar,
+.admin-reports-page ion-header ion-toolbar,
+.admin-banners-page ion-header ion-toolbar,
+.admin-settings-page ion-header ion-toolbar,
+.admin-backup-page ion-header ion-toolbar,
+.admin-comments-page ion-header ion-toolbar {
+    --background: rgba(215, 215, 220, 0.98) !important;
+    /* Slightly darker "Steel" for Admin contrast */
+    --color: #000000 !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Base selector for any IonContent inside a page that has an admin-specific class */
+ion-page:has(.admin-dashboard) ion-header ion-toolbar,
+ion-page:has(.admin-products) ion-header ion-toolbar,
+ion-page:has(.admin-users) ion-header ion-toolbar,
+ion-page:has(.admin-categories) ion-header ion-toolbar,
+ion-page:has(.admin-orders) ion-header ion-toolbar,
+ion-page:has(.activity-logs) ion-header ion-toolbar,
+ion-page:has(.admin-settings) ion-header ion-toolbar,
+ion-page:has(.backup-restore) ion-header ion-toolbar {
+    --background: rgba(215, 215, 220, 0.98) !important;
+    --color: #000000 !important;
+}
+
+/* Dark Mode Admin - Independent from user side */
+body.dark ion-page:has(.admin-dashboard) ion-header ion-toolbar,
+body.dark ion-page:has(.admin-products) ion-header ion-toolbar,
+body.dark ion-page:has(.admin-users) ion-header ion-toolbar,
+body.dark ion-page:has(.admin-categories) ion-header ion-toolbar {
+    --background: rgba(40, 40, 45, 0.98) !important;
+    --color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Force transparency on parts if needed */
+.anchored-tab-bar::part(container) {
+    background: transparent !important;
+}
+
+.anchored-tab-bar ion-tab-button {
+    --background: transparent;
+    --color: #8e8e93;
+    --color-selected: var(--ion-color-primary);
+}
+
+/* Global Padding for ALL content when tabs are present */
+/* Let Ionic handle the tab-bar spacing automatically to avoid double-padding gaps */
+ion-content,
+.ion-content,
+.ion-page,
+main {
+    --padding-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Lists and inner containers clearance */
+ion-list,
+.form-wrapper-universal,
+.cart-items,
+.cart-page,
+.profile-content,
+.store-content,
+.store-container,
+.featured-grid,
+.favorites-grid,
+.orders-content,
+.orders-accordion-group,
+.security-content-area,
+.security-scroll-container,
+.privacy-content-area,
+.privacy-main-container,
+.my-products-page,
+.products-scroll-content,
+.products-grid,
+.section:last-of-type,
+.settings-list,
+.more-list {
+    padding-bottom: 0px !important;
+    /* Gap eliminated */
+}
+
+/* Reset footers to standard position above the anchored bar */
+ion-footer {
+    background: var(--ion-background-color) !important;
+}
+
+ion-footer ion-toolbar {
+    --background: var(--ion-background-color) !important;
+}
+
+/* Kill all potential spacers and paddings from common classes globally */
+.bottom-spacer,
+.footer-spacing,
+.extra-space,
+.spacer-80,
+.spacer-100 {
+    height: 0px !important;
+    min-height: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    display: none !important;
+}
+
+/* Standard reset for tab-bar */
+ion-tabs>ion-tab-bar {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+/* 🛡️ Absolute Control - FABs Position Calibrated */
+ion-fab.Button_chatbot,
+ion-fab.Button_chatbot2,
+ion-fab.create-product-fab {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 62px !important;
+    /* Just 2px above the bar */
+    right: 5px !important;
+    margin: 0px 0px -55px 0px !important;
+    padding: 0 !important;
+    --ion-safe-area-bottom: 0px !important;
+    transform: none !important;
+    display: block !important;
+}
+
+/* Assistant Chatbot - Stacked exactly on top */
+ion-fab.Button_chatbot {
+    bottom: 115px !important;
+    /* 62 + 48 + 5 = 115px */
+}
+
+/* Base style for all Store FABs - Unified Design */
+ion-fab.Button_chatbot ion-fab-button::part(native),
+ion-fab.Button_chatbot2 ion-fab-button::part(native),
+ion-fab.create-product-fab ion-fab-button::part(native) {
+    background: rgba(142, 142, 147, 0.15) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: var(--ion-color-dark) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.349) !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.dark ion-fab.Button_chatbot ion-fab-button::part(native),
+.dark ion-fab.Button_chatbot2 ion-fab-button::part(native),
+.dark ion-fab.create-product-fab ion-fab-button::part(native) {
+    background: rgba(109, 109, 109, 0.466) !important;
+    border: 1px solid rgba(255, 255, 255, 0.014) !important;
+    color: white !important;
+}
+
+ion-tab-bar ion-badge {
+    --background: var(--ion-color-danger);
+    --border: 2px solid white;
+    font-size: 10px;
+}
+
+.dark ion-tab-bar ion-badge {
+    --border: 2px solid #1e1e1e;
+}

@@ -1,0 +1,66 @@
+.search-bar-simple {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e1e1;
+  padding: 12px 16px;
+}
+
+.search-bar-simple:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-color: #3483fa;
+}
+
+.search-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: #666;
+}
+
+.search-placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  flex: 1;
+}
+
+/* Versión compacta para header */
+.search-bar-compact {
+  margin: 8px 16px;
+  padding: 10px 16px;
+}
+
+/* Efectos de animación */
+
+/* Dark Mode Support */
+body.dark .search-bar-simple {
+  background: #2c2c2c;
+  border-color: #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .search-bar-simple:hover {
+  border-color: var(--ion-color-primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .search-bar-content {
+  color: #aaa;
+}
+
+body.dark .search-icon {
+  color: #aaa;
+}
+
+body.dark .search-placeholder {
+  color: #888;
+}

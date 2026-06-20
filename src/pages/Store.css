@@ -1,0 +1,743 @@
+/* frontend/src/pages/Store.css - VERSIÓN CORREGIDA Y ORGANIZADA */
+
+/* ========== RESET Y CONFIGURACIÓN GENERAL ========== */
+.store-content {
+  --background: #f5f5f5;
+  padding-bottom: 20px;
+}
+
+/* ========== HEADER Y BÚSQUEDA ========== */
+.search-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.search-header ion-searchbar {
+  flex: 1;
+  padding: 0;
+}
+
+/* ========== BANNERS ========== */
+.banners-section {
+  padding: 0 16px 16px;
+  background: white;
+  margin-bottom: 16px;
+}
+
+.banners-section .banner-carousel {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ========== CATEGORÍAS (Scroll Horizontal) ========== */
+.categories-section {
+  background: white;
+  padding: 12px 16px 20px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+
+.categories-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 8px 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.categories-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-scroll-item {
+  min-width: 75px;
+  max-width: 75px;
+  text-align: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.category-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #0054e9, #2e86de);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px auto;
+  transition: transform 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.category-scroll-item:active .category-icon {
+  transform: scale(0.95);
+}
+
+.category-icon ion-icon {
+  font-size: 22px;
+  color: white;
+}
+
+/* TEXTO DE CATEGORÍAS - AQUÍ ESTÁ EL CAMBIO PRINCIPAL */
+.categories-scroll .category-name {
+  font-size: 10px;
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 24px;
+  text-align: center;
+}
+
+
+/* Update See More Button Style */
+.see-more-category .category-icon {
+  background: white;
+  border: 2px solid var(--ion-color-primary);
+  box-shadow: 0 2px 8px rgba(var(--ion-color-primary-rgb), 0.15);
+}
+
+.see-more-category .category-icon ion-icon {
+  color: var(--ion-color-primary);
+}
+
+/* ========== GRID DE CATEGORÍAS (AllCategories) ========== */
+.all-categories-content {
+  --background: #f5f5f5;
+}
+
+.category-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  height: 120px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.category-grid-item:active {
+  transform: scale(0.98);
+  background: #f9f9f9;
+  /* Sutil feedback visual al tocar */
+}
+
+.category-grid-icon {
+  width: 50px;
+  height: 50px;
+  /* Estilo Fijo: Blue Gradient BG, White Icon */
+  background: linear-gradient(135deg, var(--ion-color-primary), #4facfe);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: white;
+  font-size: 24px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(var(--ion-color-primary-rgb), 0.2);
+}
+
+/* Solo escalar, NO cambiar colores en hover/focus para evitar el "efecto pegado" en móvil */
+/* Cambio a active para evitar sticky hover en móvil */
+.category-grid-item:active .category-grid-icon {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+.category-grid-name {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: #444;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  text-align: center;
+}
+
+.section {
+  background: white;
+  margin: 0 16px 16px;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.section-header.with-icon {
+  gap: 10px;
+}
+
+.section-header h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+/* ========== PRODUCTOS DESTACADOS (Grid 2x) ========== */
+.featured-grid {
+  padding: 0;
+}
+
+.featured-grid ion-row {
+  margin: -6px;
+}
+
+.featured-grid ion-col {
+  padding: 6px;
+}
+
+.product-card {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: white;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.product-card:active {
+  transform: scale(0.98);
+}
+
+/* CONTENEDOR DE IMAGEN TIPO ADMIN (1:1) */
+.product-card .product-image-container {
+  width: 100%;
+  padding-top: 100%;
+  /* El truco del padding para 1:1 */
+  position: relative;
+  overflow: hidden;
+  background: #f9f9f9;
+  flex-shrink: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.product-card .product-image-container .product-image2 {
+  position: absolute;
+  /* NECESARIO para que se vea dentro del padding-top */
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.product-card:hover .product-image2 {
+  transform: scale(1.05);
+}
+
+
+
+/* CONTENIDO DE LA TARJETA */
+.product-card ion-card-content {
+  padding: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card .product-name1 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 34px;
+}
+
+.product-card .product-description1 {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 14px;
+}
+
+.product-card .product-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.product-card .product-discount {
+  font-size: 11px;
+  color: #00a650;
+  font-weight: 600;
+  margin: 4px 0 0 0;
+}
+
+/* DISCOUNT BADGE OVERLAY */
+.product-card .product-image-container .discount-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--ion-color-danger);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== PRODUCTOS EN SCROLL HORIZONTAL ========== */
+.products-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 4px 8px 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.products-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ITEM DE PRODUCTO EN SCROLL */
+.product-scroll-item {
+  min-width: 140px;
+  max-width: 140px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid #f0f0f0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.product-scroll-item:active {
+  transform: scale(0.98);
+}
+
+/* IMAGEN EN SCROLL TIPO GESTIONAR PRODUCTO */
+.product-scroll-item .product-image-container {
+  width: 100%;
+  padding-top: 100%;
+  /* Truco del padding para 1:1 */
+  position: relative;
+  overflow: hidden;
+  background: #f1f3f5;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.product-scroll-item .product-image-container .product-image2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+
+
+/* INFO DE PRODUCTO EN SCROLL */
+.product-scroll-info {
+  padding: 10px;
+}
+
+.product-scroll-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 34px;
+}
+
+.product-scroll-info .product-description {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 14px;
+}
+
+.product-scroll-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* ========== PRODUCTOS "VISTO RECIENTEMENTE" ========== */
+.product-scroll-info2 {
+  padding: 10px;
+}
+
+.product-scroll-name2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 34px;
+}
+
+.product-description2 {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 14px;
+}
+
+.product-scroll-price2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* FAB styles moved to Navigation.css */
+.Button_chatbot2 ion-fab-button {
+  --background: #2e86de;
+  --background-activated: #1c6bc0;
+  --background-hover: #2575d0;
+}
+
+/* ========== ESTADOS DE CARGA Y ERROR ========== */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  text-align: center;
+}
+
+.loading-container p {
+  margin-top: 16px;
+  color: #666;
+}
+
+.error-banner {
+  background: #fee;
+  padding: 16px;
+  text-align: center;
+  margin: 16px;
+  border-radius: 8px;
+  border: 1px solid #fcc;
+  color: #c00;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .section {
+    margin: 0 12px 12px;
+    padding: 14px;
+  }
+
+  .category-scroll-item {
+    min-width: 70px;
+    max-width: 70px;
+  }
+
+  .category-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .categories-scroll .category-name {
+    font-size: 9px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    margin: 0 8px 8px;
+    padding: 12px;
+  }
+
+  .categories-section {
+    padding: 10px 12px 16px;
+  }
+
+  .categories-scroll {
+    gap: 16px;
+  }
+
+  .category-scroll-item {
+    min-width: 65px;
+    max-width: 65px;
+  }
+
+  .category-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .category-icon ion-icon {
+    font-size: 20px;
+  }
+
+  .product-scroll-item {
+    min-width: 120px;
+  }
+
+  .product-scroll-name,
+  .product-scroll-name2 {
+    font-size: 12px;
+    height: 32px;
+  }
+
+  .product-scroll-price,
+  .product-scroll-price2 {
+    font-size: 13px;
+  }
+}
+
+/* ========== PLACEHOLDER PARA IMÁGENES ========== */
+/* Fallback simple para el contenedor si está vacío */
+
+/* ========== GLOBAL FOCUS REMOVAL (NUCLEAR OPTION) ========== */
+/* Forzar la eliminación de bordes azules en CUALQUIER elemento dentro de la tienda */
+.store-content * {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+}
+
+.product-card,
+.category-scroll-item,
+.category-grid-item,
+.product-scroll-item {
+  /* Asegurar que no haya borde azul por cambio de color de borde */
+  border-color: #f0f0f0 !important;
+}
+
+.product-card:focus-within,
+.category-grid-item:focus-within {
+  border-color: #f0f0f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ========== GLOBAL FOCUS REMOVAL ========== */
+/* Eliminar bordes azules de selección en móviles/navegadores */
+.product-card,
+.product-scroll-item,
+.category-grid-item,
+.category-scroll-item {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.product-card:focus,
+.product-card:focus-visible,
+.product-scroll-item:focus,
+.product-scroll-item:focus-visible,
+.category-grid-item:focus,
+.category-grid-item:focus-visible,
+.category-scroll-item:focus,
+.category-scroll-item:focus-visible,
+ion-card:focus,
+div:focus {
+  outline: none !important;
+  border-color: #f0f0f0 !important;
+  /* Mantener sombra original para evitar parpadeos, pero asegurar que no sea azul */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  --background-focused: transparent;
+  --background-focused-opacity: 0;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* ========== DARK MODE (body.dark) ========== */
+body.dark .store-content {
+  --background: #121212;
+}
+
+body.dark .search-header,
+body.dark .banners-section,
+body.dark .categories-section,
+body.dark .section {
+  background: #1e1e1e !important;
+  border-color: #333 !important;
+}
+
+body.dark .section-header {
+  border-bottom-color: #333;
+}
+
+body.dark .section-header h3 {
+  color: white;
+}
+
+body.dark .categories-scroll .category-name {
+  color: #ccc;
+}
+
+body.dark .category-icon {
+  background: linear-gradient(135deg, #1a2a4a, #16213e);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .see-more-category .category-icon {
+  background: #1e1e1e;
+  border-color: var(--ion-color-primary);
+}
+
+/* Product Cards in Dark Mode */
+body.dark .product-card,
+body.dark .product-scroll-item {
+  background: #1e1e1e !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark .product-image-container {
+  background: #252525 !important;
+}
+
+body.dark .product-name1,
+body.dark .product-scroll-name,
+body.dark .product-scroll-name2,
+body.dark .product-price,
+body.dark .product-scroll-price,
+body.dark .product-scroll-price2 {
+  color: #f0f0f0 !important;
+}
+
+body.dark .product-description1,
+body.dark .product-description2,
+body.dark .product-scroll-info .product-description {
+  color: #888 !important;
+}
+
+body.dark .rating-number {
+  color: #bbb;
+}
+
+body.dark .discount-tag {
+  background: rgba(var(--ion-color-success-rgb), 0.1);
+  color: var(--ion-color-success);
+}
+
+body.dark .loading-container p {
+  color: #aaa;
+}
+
+/* Category Grid Item (AllCategories) */
+body.dark .all-categories-content {
+  --background: #121212;
+}
+
+body.dark .category-grid-item {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .category-grid-name {
+  color: #ccc;
+}
+
+body.dark .category-grid-icon {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Nuclear focus removal for dark mode too */
+body.dark .store-content * {
+  outline: none !important;
+}
+
+
+body.dark .store-toolbar {
+  --background: #1e1e1e;
+  --color: white;
+  --border-color: #333;
+}
+
+body.dark .product-card,
+body.dark .category-scroll-item,
+body.dark .category-grid-item,
+body.dark .product-scroll-item {
+  border-color: #333 !important;
+}

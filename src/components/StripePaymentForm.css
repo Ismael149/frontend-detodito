@@ -1,0 +1,100 @@
+.stripe-payment-form {
+  width: 100%;
+}
+
+.stripe-loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ion-color-medium);
+}
+
+.payment-summary {
+  background: var(--ion-color-light);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.payment-summary p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.stripe-form {
+  margin-top: 20px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.card-element-section {
+  margin: 20px 0;
+}
+
+.card-element-wrapper {
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  background: white;
+}
+
+/* Estilos para el elemento de tarjeta de Stripe */
+.StripeElement {
+  width: 100%;
+}
+
+.security-info {
+  text-align: center;
+  padding: 16px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.security-info small {
+  font-size: 12px;
+}
+
+.payment-button {
+  margin-top: 20px;
+  --border-radius: 8px;
+  height: 48px;
+  font-weight: 600;
+}
+
+/* Estados de deshabilitado */
+.payment-button:disabled {
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .stripe-payment-form {
+    padding: 0 10px;
+  }
+  
+  .card-element-wrapper {
+    padding: 8px;
+  }
+  
+  .payment-button {
+    height: 44px;
+    font-size: 14px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .card-element-wrapper {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .payment-summary,
+  .security-info {
+    background: #2d2d2d;
+  }
+}

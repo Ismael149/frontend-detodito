@@ -1,0 +1,79 @@
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--ion-color-primary);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.actual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.actual-image.hidden {
+  opacity: 0;
+}
+
+.actual-image.visible {
+  opacity: 1;
+}
+
+.image-fallback {
+  width: 100%;
+  height: 160px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ion-color-medium);
+}
+
+.fallback-content {
+  text-align: center;
+}
+
+.fallback-content span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.fallback-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}

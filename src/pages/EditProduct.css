@@ -1,0 +1,381 @@
+/* EditProduct.css - V8 PREMIUM DARK MODE REFACTOR */
+
+/* =========================================
+   GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+  --page-bg-light: #f4f5f8;
+  --page-bg-dark: #121212;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e1e1e;
+  --text-primary-light: #111111;
+  --text-primary-dark: #ffffff;
+  --text-secondary-light: #666666;
+  --text-secondary-dark: #aaaaaa;
+  --border-light: #e0e0e0;
+  --border-dark: #333333;
+  --input-bg-light: #f8f9fa;
+  --input-bg-dark: #2a2a2a;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+     PAGE CONTAINER
+     ========================================= */
+.edit-product-page {
+  --background: var(--page-bg-light);
+}
+
+body.dark .edit-product-page {
+  --background: var(--page-bg-dark);
+}
+
+.edit-container {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* =========================================
+     PREMIUM CARD STYLES
+     ========================================= */
+.premium-card {
+  background: var(--card-bg-light);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-light);
+  margin-bottom: 24px;
+  border: 1px solid transparent;
+}
+
+body.dark .premium-card {
+  background: var(--card-bg-dark);
+  box-shadow: var(--shadow-dark);
+  border: 1px solid var(--border-dark);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body.dark .card-title {
+  color: var(--text-primary-dark);
+}
+
+.card-title ion-icon {
+  color: var(--ion-color-primary);
+  font-size: 1.3rem;
+}
+
+/* =========================================
+     IMAGE UPLOAD SECTION
+     ========================================= */
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.image-item {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.primary-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(235, 68, 90, 0.9);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Upload Placeholder */
+.upload-placeholder {
+  aspect-ratio: 1/1;
+  border: 2px dashed var(--border-light);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+body.dark .upload-placeholder {
+  border-color: var(--border-dark);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.upload-placeholder:active {
+  background: rgba(var(--ion-color-primary-rgb), 0.05);
+  border-color: var(--ion-color-primary);
+}
+
+.upload-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary-light);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+body.dark .upload-text {
+  color: var(--text-secondary-dark);
+}
+
+/* =========================================
+     FORM INPUTS
+     ========================================= */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary-light);
+  margin-bottom: 8px;
+  margin-left: 4px;
+}
+
+body.dark .form-label {
+  color: var(--text-secondary-dark);
+}
+
+.premium-input-wrapper {
+  background: var(--input-bg-light);
+  border-radius: 12px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+body.dark .premium-input-wrapper {
+  background: var(--input-bg-dark);
+}
+
+.premium-input-wrapper:focus-within {
+  border-color: var(--ion-color-primary);
+  box-shadow: 0 0 0 2px rgba(var(--ion-color-primary-rgb), 0.2);
+}
+
+/* Native Input Styles */
+.premium-native-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary-light);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+body.dark .premium-native-input {
+  color: var(--text-primary-dark);
+}
+
+.premium-native-input::placeholder {
+  color: #999;
+}
+
+/* Completely reset ion-input styles to be transparent */
+.premium-input {
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+  --padding-top: 10px !important;
+  --padding-bottom: 10px !important;
+
+  --background: transparent !important;
+  --background-focused: transparent !important;
+  --background-hover: transparent !important;
+
+  --placeholder-color: #999 !important;
+  --color: var(--text-primary-light) !important;
+
+  /* Remove Ionic's default bottom border/highlight */
+  --highlight-color-focused: transparent !important;
+  --highlight-height: 0 !important;
+
+  width: 100%;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+body.dark .premium-input {
+  --color: var(--text-primary-dark) !important;
+  color: var(--text-primary-dark) !important;
+}
+
+/* Aggressively target the native input inside Shadow DOM if possible, or standard children */
+.premium-input input,
+.premium-input .native-input,
+.premium-input .native-textarea {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure no white background appears on focus states */
+.premium-input.has-focus,
+.premium-input.ion-focused,
+.premium-input:focus-within {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--text-secondary-light);
+  margin-top: 4px;
+  margin-right: 4px;
+}
+
+/* =========================================
+     BUTTONS & ACTIONS
+     ========================================= */
+.action-bar {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.save-btn {
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(var(--ion-color-primary-rgb), 0.3);
+  font-weight: 600;
+  flex: 2;
+  margin: 0;
+}
+
+.cancel-btn {
+  --border-radius: 12px;
+  --border-color: var(--border-light);
+  --color: var(--text-secondary-light);
+  font-weight: 600;
+  flex: 1;
+  margin: 0;
+}
+
+body.dark .cancel-btn {
+  --border-color: var(--border-dark);
+  --color: var(--text-secondary-dark);
+}
+
+/* STATUS BADGE */
+.status-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--input-bg-light);
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+body.dark .status-toggle {
+  background: var(--input-bg-dark);
+}
+
+/* =========================================
+     LOADING & ERROR
+     ========================================= */
+.center-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  text-align: center;
+}
+
+.center-state h3 {
+  margin-top: 16px;
+  color: var(--text-primary-light);
+}
+
+body.dark .center-state h3 {
+  color: var(--text-primary-dark);
+}
+
+/* Error Styling */
+.premium-input-wrapper.has-error,
+.premium-native-input.input-error {
+  border: 1px solid var(--ion-color-danger) !important;
+  background: rgba(var(--ion-color-danger-rgb), 0.05);
+}
+
+body.dark .premium-input-wrapper.has-error,
+body.dark .premium-native-input.input-error {
+  background: rgba(var(--ion-color-danger-rgb), 0.1) !important;
+  border-color: var(--ion-color-danger) !important;
+}
+
+.error-message-product {
+  color: var(--ion-color-danger);
+  font-size: 0.75rem;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.error-message-product::before {
+  content: "!";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  background: var(--ion-color-danger);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 6px;
+}

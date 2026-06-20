@@ -1,0 +1,259 @@
+/* AdminComments.css - Standardized Design System */
+
+/* Base Variables - Replicating from AdminUsers/AdminProducts */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Container */
+.admin-comments {
+  --background: #f4f5f8;
+  padding-bottom: 0 !important;
+}
+
+/* Filters Toolbar in Header */
+.filters-toolbar {
+  --background: #f8f9fa !important;
+  background: #f8f9fa !important;
+  --border-width: 0 0 1px 0;
+  --border-color: #eee;
+  --padding-top: 4px;
+  --padding-bottom: 4px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  min-height: auto;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.filters-toolbar ion-searchbar {
+  --background: #fff;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  padding: 0;
+  margin: 0;
+}
+
+body.dark .filters-toolbar {
+  --background: #1a1a1a !important;
+  background: #1a1a1a !important;
+  --border-color: #333;
+}
+
+body.dark .filters-toolbar ion-searchbar {
+  --background: #2c2c2c;
+  --color: white;
+}
+
+/* Comments Container - Match AdminUsers.css */
+.comments-container {
+  padding: 16px;
+  padding-bottom: 0 !important;
+}
+
+/* Comments Grid - Standardized to Match User/Product Grids */
+.comments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Comments are long, usually 1 col, or 2 on desktop */
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  .comments-grid {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+}
+
+/* Comment Card - Match .user-card from AdminUsers.css */
+.comment-card {
+  margin: 0;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-card:hover {
+  transform: translateY(-2px);
+}
+
+.comment-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Card Header Area */
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.comment-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.comment-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-display-name {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 1rem;
+}
+
+.user-username-small {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Comment Body */
+.comment-main-text {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 4px 0;
+  font-style: italic;
+  position: relative;
+}
+
+.comment-product-ref {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* AI Risk Section */
+.ai-risk-blob {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(235, 68, 90, 0.05);
+  border: 1px solid rgba(235, 68, 90, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.risk-label-text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #eb445a;
+}
+
+.risk-score-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #eb445a;
+}
+
+/* Card Footer/Actions - Match AdminUsers.css footer */
+.comment-card-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-meta {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-actions ion-button {
+  height: 32px;
+  font-size: 0.8rem;
+  --border-radius: 6px;
+  margin: 0;
+}
+
+/* Loading & Empty States - Match AdminUsers.css */
+.loading-container,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading-container ion-spinner {
+  --color: #667eea;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state ion-icon {
+  font-size: 4rem;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 1rem;
+}
+
+body.dark .admin-comments {
+  --background: #121212;
+}
+
+body.dark .filters-section {
+  background: #1e1e1e;
+  border-bottom-color: #333;
+}
+
+body.dark .comment-card {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .comment-card-footer {
+  background: #242424;
+  border-top-color: #333;
+}
+
+body.dark .user-display-name {
+  color: white;
+}

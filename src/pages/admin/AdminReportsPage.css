@@ -1,0 +1,99 @@
+.admin-reports-page {
+  --background: #fdfdfd;
+}
+
+body.dark .admin-reports-page {
+  --background: #0a0a0a;
+}
+
+.glass-toolbar {
+  --background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  --border-width: 0;
+}
+
+body.dark .glass-toolbar {
+  --background: rgba(0, 0, 0, 0.7);
+}
+
+.glass-toolbar-sub {
+  --background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+body.dark .glass-toolbar-sub {
+  --background: rgba(20, 20, 20, 0.6);
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.glass-btn {
+  --border-radius: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 0 4px;
+}
+
+body.dark .glass-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.premium-metric-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.premium-metric-card:active {
+  transform: scale(0.95);
+}
+
+body.dark .premium-metric-card {
+  background: #1a1a1a;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.premium-metric-card ion-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.premium-metric-card .value {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.premium-metric-card .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.6;
+}
+
+.report-render-area {
+  padding: 8px;
+}
+
+.glass-card-premium {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.dark .glass-card-premium {
+  background: rgba(30, 30, 30, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}

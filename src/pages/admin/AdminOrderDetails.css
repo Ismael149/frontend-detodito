@@ -1,0 +1,385 @@
+/* AdminOrderDetails.css - Premium Dashboard Experience */
+
+:root {
+  --details-gap: 20px;
+  --glass-bg-details: rgba(255, 255, 255, 0.85);
+  --glass-border-details: rgba(255, 255, 255, 0.5);
+  --details-primary-glow: rgba(var(--ion-color-primary-rgb), 0.15);
+}
+
+.admin-order-details {
+  --background: var(--ion-background-color, #f4f7f9);
+}
+
+/* Specific Card Styling for this page */
+.admin-order-details ion-card {
+  --background: var(--ion-card-background);
+  color: var(--ion-text-color);
+  border: 1px solid var(--ion-border-color);
+}
+
+/* 1. Hero Header Section */
+.order-header-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  color: #ffffff !important;
+  border-radius: 20px !important;
+  margin: 0 0 24px 0 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  overflow: visible !important;
+}
+
+body.dark .order-header-card {
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.order-title-group h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.order-creation-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.status-badge-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.main-status-chip {
+  --background: #ffffff;
+  --color: #1e293b;
+  font-weight: 800;
+  height: 32px;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --padding-start: 10px;
+  --padding-end: 14px;
+}
+
+.update-status-btn {
+  --background: rgba(255, 255, 255, 0.15);
+  --color: #ffffff;
+  --border-radius: 10px;
+  --border-color: rgba(255, 255, 255, 0.4);
+  --border-width: 1px;
+  font-weight: 700;
+  margin: 0;
+  height: 32px;
+  font-size: 0.8rem;
+  text-transform: none;
+}
+
+/* Total Display in Header */
+.order-total-display {
+  text-align: right;
+  padding: 10px;
+}
+
+.total-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+  color: #ffffff !important;
+  margin-bottom: 4px;
+}
+
+.total-amount {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0 0 16px 0 !important;
+  color: #ffffff !important;
+}
+
+.download-invoice-btn {
+  --color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.4);
+  --border-width: 1px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 2. Admin Notes Highlighted */
+.admin-notes-display-card {
+  border-radius: 16px !important;
+  border: 1px solid var(--ion-color-primary-tint) !important;
+  box-shadow: 0 4px 15px var(--details-primary-glow) !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.admin-notes-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ion-color-primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--ion-color-primary-tint);
+}
+
+.admin-notes-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ion-text-color);
+  font-style: italic;
+  margin: 0;
+}
+
+/* 3. Information Grid Cards */
+.info-sub-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid var(--ion-border-color) !important;
+  margin: 0 0 20px 0 !important;
+  height: calc(100% - 20px);
+}
+
+body.dark .info-sub-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.info-sub-card ion-card-header {
+  padding: 16px 20px 10px;
+}
+
+.info-sub-card ion-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--ion-color-primary);
+}
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.7rem;
+  color: var(--ion-color-medium);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ion-text-color);
+}
+
+/* 4. Products List */
+.products-list-card {
+  border-radius: 20px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid var(--ion-border-color) !important;
+}
+
+.product-accordion {
+  border-bottom: 1px solid var(--ion-border-color);
+}
+
+.order-item-header-custom {
+  padding: 16px 20px;
+  background: var(--ion-card-background);
+}
+
+.product-thumbnail {
+  --size: 72px;
+  --border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ion-text-color);
+  margin-bottom: 6px !important;
+}
+
+.product-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tiny-chip {
+  height: 22px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.item-subtotal {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ion-color-primary);
+}
+
+/* 5. Financial Summary - Detailed Look */
+.financial-summary {
+  background: var(--ion-color-light);
+  border-top: 1px solid var(--ion-border-color);
+  padding: 20px;
+}
+
+body.dark .financial-summary {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ion-color-medium);
+}
+
+.summary-row.total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid var(--ion-color-primary-tint);
+  color: var(--ion-text-color);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.final-price {
+  font-size: 1.6rem;
+  color: var(--ion-color-primary);
+}
+
+/* 6. Admin Sidebar - Control Panel Look */
+.admin-actions-sidebar {
+  border-radius: 24px !important;
+  position: sticky;
+  top: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(var(--ion-color-primary-rgb), 0.1) !important;
+}
+
+body.dark .admin-actions-sidebar {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.admin-actions-sidebar ion-card-header {
+  background: rgba(var(--ion-color-primary-rgb), 0.05);
+  padding: 20px;
+}
+
+.admin-actions-sidebar ion-card-title {
+  color: var(--ion-color-primary);
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-guide {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  color: var(--ion-color-medium);
+}
+
+.admin-textarea {
+  --background: var(--ion-color-light);
+  --padding-start: 16px;
+  --padding-top: 16px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: var(--ion-text-color);
+  margin-bottom: 16px;
+}
+
+.save-all-btn {
+  --border-radius: 16px;
+  --padding-top: 18px;
+  --padding-bottom: 18px;
+  height: 56px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(var(--ion-color-primary-rgb), 0.3);
+}
+
+.history-info {
+  margin-top: 30px;
+  padding: 16px;
+  background: rgba(var(--ion-color-medium-rgb), 0.05);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.history-info p {
+  font-size: 0.8rem;
+  margin: 0;
+  color: var(--ion-color-medium);
+}
+
+.history-info ion-icon {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+/* Responsive Mobile Fixes */
+@media (max-width: 991px) {
+  .mobile-text-left {
+    text-align: left !important;
+    margin-top: 24px;
+  }
+
+  .admin-actions-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .order-title-group h2 {
+    font-size: 1.5rem;
+  }
+
+  .total-amount {
+    font-size: 2.2rem;
+  }
+
+  .info-sub-card {
+    height: auto;
+  }
+}

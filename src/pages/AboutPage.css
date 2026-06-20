@@ -1,0 +1,301 @@
+/* AboutPage.css - V6 EXACT "MORE" ALIGNMENT */
+
+.about-content {
+  --background: var(--ion-background-color) !important;
+}
+
+body.dark .about-content {
+  --background: #121212 !important;
+}
+
+/* HEADER CARD - Ultra Compact */
+.about-header-card {
+  margin: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--ion-color-primary) 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 20px 16px 16px;
+  box-shadow: var(--card-shadow-premium);
+}
+
+.about-header-card ion-card-content {
+  padding: 0 !important;
+}
+
+.app-logo {
+  margin-bottom: 8px;
+}
+
+.logo-placeholder {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+}
+
+.app-name {
+  margin: 4px 0 2px 0;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.app-tagline {
+  opacity: 0.9;
+  margin: 0 0 8px 0;
+  font-size: 0.8rem;
+}
+
+.app-version {
+  margin: 8px 0;
+}
+
+.app-version ion-badge {
+  font-size: 0.7rem;
+}
+
+.release-date {
+  opacity: 0.8;
+  font-size: 0.7rem;
+  margin: 4px 0 0 0;
+}
+
+.header-actions {
+  margin-top: 8px;
+}
+
+/* MORE LIST STRUCTURE */
+.about-list {
+  background: transparent !important;
+  padding: 8px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-list ion-item {
+  --min-height: 60px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin: 8px 16px;
+  border-radius: 12px;
+  --background: var(--ion-card-background, white);
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+  overflow: hidden;
+}
+
+body.dark .about-list ion-item {
+  --background: #1e1e1e !important;
+  --color: #ffffff !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* SECTION TITLES */
+.section-title-v6 {
+  padding: 16px 24px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ion-color-medium);
+}
+
+/* MISSION CARD */
+.mission-card-v6 {
+  margin: 8px 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--ion-card-background, white);
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+}
+
+body.dark .mission-card-v6 {
+  background: #1e1e1e;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mission-text {
+  line-height: 1.6;
+  color: var(--ion-text-color);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+body.dark .mission-text {
+  color: #e0e0e0;
+}
+
+/* FEATURES GRID */
+.features-grid-v6 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 16px 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-card-v6 {
+  text-align: center;
+  padding: 20px 16px;
+  background: var(--ion-card-background, white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+}
+
+body.dark .feature-card-v6 {
+  background: #1e1e1e;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon-v6 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.feature-card-v6 h4 {
+  margin: 0 0 8px 0;
+  color: var(--ion-text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+body.dark .feature-card-v6 h4 {
+  color: #ffffff;
+}
+
+.feature-card-v6 p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* TEAM GRID */
+.team-grid-v6 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 16px 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-member-v6 {
+  text-align: center;
+  padding: 16px;
+  background: var(--ion-card-background, white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+}
+
+body.dark .team-member-v6 {
+  background: #1e1e1e;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.member-avatar-v6 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.member-info-v6 h4 {
+  margin: 0 0 4px 0;
+  color: var(--ion-text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+body.dark .member-info-v6 h4 {
+  color: #ffffff;
+}
+
+.member-info-v6 p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.75rem;
+}
+
+/* CONTACT ITEMS */
+.contact-item-v6 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.contact-item-v6 ion-icon {
+  font-size: 1.4rem;
+}
+
+.contact-details-v6 h4 {
+  margin: 0 0 4px 0;
+  color: var(--ion-text-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+body.dark .contact-details-v6 h4 {
+  color: #ffffff;
+}
+
+.contact-details-v6 p {
+  margin: 0;
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+}
+
+/* SOCIAL LINKS */
+.social-links-v6 {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0 16px 16px;
+}
+
+/* FOOTER */
+.about-footer {
+  text-align: center;
+  padding: 24px 16px 40px;
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+}
+
+.footer-love {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .features-grid-v6,
+  .team-grid-v6 {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links-v6 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

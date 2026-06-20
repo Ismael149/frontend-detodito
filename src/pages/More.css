@@ -1,0 +1,144 @@
+/* More.css - Card Style Fix */
+.more-content {
+  --background: var(--ion-background-color) !important;
+}
+
+.more-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.more-list {
+  background: transparent !important;
+  padding: 8px 0;
+}
+
+.user-header {
+  --min-height: 80px;
+  --background: var(--ion-card-background, white);
+  border-radius: 12px;
+  margin: 16px 16px 24px 16px;
+  box-shadow: var(--card-shadow-premium);
+  border: var(--card-border-premium);
+  overflow: hidden;
+}
+
+.user-header ion-icon[slot="start"] {
+  font-size: 2.5rem;
+}
+
+.user-header h2 {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.divider {
+  height: 24px;
+  /* Spacer */
+  background: transparent;
+  border: none;
+}
+
+.more-list ion-item {
+  --min-height: 56px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin: 8px 16px;
+  /* Explicit spacing from edges */
+  border-radius: 12px;
+  /* Rounded corners */
+  --background: var(--ion-card-background, white);
+  /* Card bg */
+  box-shadow: var(--card-shadow-premium);
+  /* Subtle shadow */
+  border: var(--card-border-premium);
+  overflow: hidden;
+  /* Show shadow */
+}
+
+/* Specific styling for section titles */
+.section-title {
+  padding: 8px 24px 4px;
+  /* Indent more than items */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ion-color-medium);
+  background: transparent;
+}
+
+.more-list ion-icon[slot="start"] {
+  font-size: 1.4rem;
+  margin-right: 16px;
+  color: var(--ion-color-medium);
+}
+
+.more-list h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ion-text-color);
+}
+
+.more-list ion-badge {
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Footer de la app */
+.app-footer {
+  text-align: center;
+  padding: 24px 16px;
+  margin-top: 16px;
+}
+
+.version {
+  font-size: 0.9rem;
+  margin: 0 0 8px 0;
+  color: var(--ion-text-color-step-300);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin: 0;
+  color: var(--ion-text-color-step-500);
+}
+
+/* Hover effects */
+@media (hover: hover) {
+  .more-list ion-item:hover {
+    --background: var(--ion-color-step-50, #f8f9fa);
+    transform: translateY(-1px);
+    transition: transform 0.2s ease, --background 0.2s;
+  }
+}
+
+/* Dark Mode Overrides */
+body.dark .more-content {
+  --background: #121212 !important;
+}
+
+body.dark .more-list {
+  background: transparent !important;
+}
+
+body.dark .more-list ion-item {
+  --background: #1e1e1e !important;
+  --color: #ffffff !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark .more-list h3 {
+  color: #ffffff !important;
+}
+
+body.dark .user-header {
+  --background: #1e1e1e !important;
+  border: 1px solid #333;
+}
+
+body.dark .user-header h2 {
+  color: #ffffff;
+}

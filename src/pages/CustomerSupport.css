@@ -1,0 +1,220 @@
+/* 
+  CUSTOMER SUPPORT - V6 EXACT "MORE" ALIGNMENT
+  Using IonList + IonItem structure with premium floating card look.
+*/
+
+.support-content-v6 {
+  --background: var(--ion-background-color) !important;
+}
+
+body.dark .support-content-v6 {
+  --background: #121212 !important;
+}
+
+/* 1. MORE LIST REPLICATION */
+.more-list {
+  background: transparent !important;
+  padding: 8px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.more-list ion-item {
+  --min-height: 56px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin: 8px 16px;
+  border-radius: 12px;
+  --background: var(--ion-card-background, white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--ion-border-color, rgba(0, 0, 0, 0.05));
+  overflow: visible;
+}
+
+body.dark .more-list ion-item {
+  --background: #1e1e1e !important;
+  --color: #ffffff !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 2. USER-HEADER STYLE */
+.user-header.support-hero {
+  --min-height: 80px;
+  margin: 16px 16px 24px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.support-header-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(var(--ion-color-primary-rgb), 0.1);
+  color: var(--ion-color-primary);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-right: 16px;
+}
+
+.user-header h2 {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* 3. SECTION TITLES */
+.section-title {
+  padding: 16px 24px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* 4. ACCORDION ITEMS AS CARDS */
+.support-item-accordion {
+  margin: 8px 16px;
+  border-radius: 12px;
+  background: var(--ion-card-background, white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+body.dark .support-item-accordion {
+  background: #1e1e1e !important;
+  border-color: #333 !important;
+}
+
+.support-accordion-header {
+  --background: transparent;
+  --min-height: 56px;
+}
+
+.faq-content-v6 {
+  padding: 16px 20px;
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+body.dark .faq-content-v6 {
+  background: #181818;
+  border-top-color: #2a2a2a;
+}
+
+.faq-v6-entry {
+  margin-bottom: 16px;
+}
+
+.faq-v6-entry:last-child {
+  margin-bottom: 0;
+}
+
+.q-v6 {
+  margin: 0 0 4px;
+  font-size: 0.92rem;
+  color: #000;
+  font-weight: 700;
+}
+
+body.dark .q-v6 {
+  color: #fff;
+}
+
+.a-v6 {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+body.dark .a-v6 {
+  color: #aaa;
+}
+
+/* 5. FORM CARD STYLE ITEM */
+.support-form-container-v6 {
+  margin: 8px 16px;
+}
+
+.form-card-v6 {
+  background: var(--ion-card-background, white);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark .form-card-v6 {
+  background: #1e1e1e !important;
+  border-color: #333 !important;
+}
+
+.v6-input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.v6-input-item label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #666;
+  margin-left: 4px;
+}
+
+body.dark .v6-input-item label {
+  color: #999;
+}
+
+.v6-input-item input,
+.v6-input-item textarea {
+  background: #f4f5f8;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  color: #000;
+}
+
+body.dark .v6-input-item input,
+body.dark .v6-input-item textarea {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: #fff;
+}
+
+.v6-select-box {
+  background: #f4f5f8;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+}
+
+body.dark .v6-select-box {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+}
+
+.v6-submit-button {
+  width: 100%;
+  background: var(--ion-color-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* 6. LIST ICONS */
+.support-list-icon {
+  font-size: 1.4rem;
+  margin-right: 16px;
+}

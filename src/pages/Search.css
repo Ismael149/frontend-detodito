@@ -1,0 +1,335 @@
+/* Search.css - V8 PREMIUM DARK MODE REFACTOR */
+
+/* =========================================
+   GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+  --page-bg-light: #f4f5f8;
+  --page-bg-dark: #121212;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e1e1e;
+  --text-primary-light: #111111;
+  --text-primary-dark: #ffffff;
+  --text-secondary-light: #666666;
+  --text-secondary-dark: #aaaaaa;
+  --border-light: #e0e0e0;
+  --border-dark: #333333;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --accent-color: #3880ff;
+  --danger-color: #eb445a;
+}
+
+/* =========================================
+   PAGE CONTAINER
+   ========================================= */
+.search-page {
+  --background: var(--page-bg-light);
+}
+
+body.dark .search-page {
+  --background: var(--page-bg-dark);
+}
+
+.search-page ion-content {
+  --background: var(--page-bg-light);
+}
+
+body.dark .search-page ion-content {
+  --background: var(--page-bg-dark);
+}
+
+/* =========================================
+   HEADER & SEARCH BAR
+   ========================================= */
+.search-header-container {
+  padding: 8px 16px;
+  background: var(--card-bg-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1001;
+}
+
+body.dark .search-header-container {
+  background: var(--card-bg-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0f2f5;
+  border-radius: 12px;
+  padding: 0 12px;
+  height: 48px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1002;
+}
+
+body.dark .search-input-wrapper {
+  background: #2a2a2a;
+}
+
+.search-input-wrapper:focus-within {
+  box-shadow: 0 0 0 2px rgba(var(--ion-color-primary-rgb), 0.3);
+  background: var(--card-bg-light);
+}
+
+body.dark .search-input-wrapper:focus-within {
+  background: #333;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-primary-light);
+  width: 100%;
+}
+
+body.dark .search-input {
+  color: var(--text-primary-dark);
+}
+
+.search-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary-light);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+body.dark .icon-btn {
+  color: var(--text-secondary-dark);
+}
+
+.icon-btn.listening {
+  color: var(--danger-color);
+  animation: pulse-red 1.5s infinite;
+}
+
+.filter-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--danger-color);
+  color: white;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(235, 68, 90, 0.4);
+  }
+
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(235, 68, 90, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(235, 68, 90, 0);
+  }
+}
+
+/* =========================================
+   SUGGESTIONS DROPDOWN
+   ========================================= */
+.suggestions-container {
+  position: absolute;
+  top: 56px;
+  /* Positioned below the 48px input + 8px padding */
+  left: 16px;
+  right: 16px;
+  background: var(--card-bg-light);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-light);
+}
+
+body.dark .suggestions-container {
+  background: var(--card-bg-dark);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-dark);
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+body.dark .suggestion-item {
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark .suggestion-item:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.suggestion-icon {
+  margin-right: 12px;
+  color: var(--text-secondary-light);
+  opacity: 0.7;
+}
+
+.suggestion-text h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary-light);
+}
+
+body.dark .suggestion-text h4 {
+  color: var(--text-primary-dark);
+}
+
+.suggestion-text p {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary-light);
+}
+
+/* =========================================
+   FILTERS PANEL
+   ========================================= */
+.filters-drawer {
+  background: var(--card-bg-light);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+body.dark .filters-drawer {
+  background: var(--card-bg-dark);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filters-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary-light);
+}
+
+body.dark .filters-header h3 {
+  color: var(--text-primary-dark);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.filter-group {
+  margin-bottom: 12px;
+}
+
+.filter-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary-light);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Custom Select Styling */
+.premium-select,
+.premium-input-filter {
+  width: 100%;
+  background: #f0f2f5;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--text-primary-light);
+  font-size: 0.9rem;
+}
+
+body.dark .premium-select,
+body.dark .premium-input-filter {
+  background: #2a2a2a;
+  color: var(--text-primary-dark);
+}
+
+.apply-filters-btn {
+  margin-top: 16px;
+  width: 100%;
+  --border-radius: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   PRODUCT CARDS (Standardized to Store.tsx)
+   ========================================= */
+.grid-container {
+  padding: 12px;
+}
+
+/* Estilos de tarjetas de productos removidos para usar los globales unificados de variables.css */
+
+/* =========================================
+   EMPTY STATES & LOADING
+   ========================================= */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0.7;
+}
