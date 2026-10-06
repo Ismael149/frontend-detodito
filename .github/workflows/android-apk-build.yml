@@ -68,49 +68,19 @@ jobs:
           path: android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
 
-      # ── 11. Crear un Release automático si el push tiene un tag v* ──────────
-      - name: 🏷️ Crear Release si hay tag de versión
-        if: startsWith(github.ref, 'refs/tags/v')
+      # ── 11. Publicar Release 'latest' en GitHub Releases ───────────────────
+      - name: 🏷️ Publicar Release 'latest' en GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          files: android/app/build/outputs/apk/debug/app-debug.apk
-          name: "DeTodito ${{ github.ref_name }}"
+          tag_name: "latest"
+          name: "DeTodito APK (Última versión)"
           body: |
-            ## 📱 Nueva versión de DeTodito
+            ## 📱 DeTodito - Última compilación de la aplicación
             APK compilado automáticamente por GitHub Actions.
-            **Commit:** ${{ github.sha }}
-            **Fecha:** ${{ github.event.head_commit.timestamp }}
+            - **Build:** #${{ github.run_number }}
+            - **Commit:** ${{ github.sha }}
+            - **Fecha:** ${{ github.event.head_commit.timestamp }}
+          files: android/app/build/outputs/apk/debug/app-debug.apk
 
-      # ── 12. Publicar APK directamente en la rama 'apk-builds' ──────────────
-      - name: 🚀 Publicar APK en rama 'apk-builds'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          mkdir -p /tmp/apk-release
-          cp android/app/build/outputs/apk/debug/app-debug.apk /tmp/apk-release/DeTodito.apk
-
-          set +e
-          git fetch origin apk-builds:apk-builds
-          FETCH_STATUS=$?
-          set -e
-
-          if [ $FETCH_STATUS -eq 0 ]; then
-            git checkout apk-builds
-          else
-            git checkout --orphan apk-builds
-          fi
-
-          git rm -rf . || true
-          cp /tmp/apk-release/DeTodito.apk ./DeTodito.apk
-          git add DeTodito.apk
-
-          if git diff --staged --quiet; then
-            echo "ℹ️ El APK no presenta cambios."
-          else
-            git commit -m "chore: APK actualizado por GitHub Actions (Build #${{ github.run_number }})"
-            git push origin apk-builds --force
-            echo "✅ APK publicado exitosamente en la rama 'apk-builds'."
-          fi
 
 
