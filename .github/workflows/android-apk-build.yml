@@ -78,3 +78,28 @@ jobs:
             APK compilado automáticamente por GitHub Actions.
             **Commit:** ${{ github.sha }}
             **Fecha:** ${{ github.event.head_commit.timestamp }}
+
+      # ── 12. Publicar APK directamente en la rama 'apk-builds' ──────────────
+      - name: 🚀 Publicar APK en rama 'apk-builds'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          mkdir -p /tmp/apk-release
+          cp android/app/build/outputs/apk/debug/app-debug.apk /tmp/apk-release/DeTodito.apk
+
+          git fetch origin apk-builds:apk-builds || git checkout --orphan apk-builds
+          git checkout apk-builds
+          git rm -rf . || true
+
+          cp /tmp/apk-release/DeTodito.apk ./DeTodito.apk
+          git add DeTodito.apk
+
+          if git diff --staged --quiet; then
+            echo "ℹ️ El APK no presenta cambios."
+          else
+            git commit -m "chore: APK actualizado por GitHub Actions (Build #${{ github.run_number }})"
+            git push origin apk-builds --force
+            echo "✅ APK publicado exitosamente en la rama 'apk-builds'."
+          fi
+
