@@ -90,10 +90,18 @@ jobs:
           mkdir -p /tmp/apk-release
           cp android/app/build/outputs/apk/debug/app-debug.apk /tmp/apk-release/DeTodito.apk
 
-          git fetch origin apk-builds:apk-builds || git checkout --orphan apk-builds
-          git checkout apk-builds
-          git rm -rf . || true
+          set +e
+          git fetch origin apk-builds:apk-builds
+          FETCH_STATUS=$?
+          set -e
 
+          if [ $FETCH_STATUS -eq 0 ]; then
+            git checkout apk-builds
+          else
+            git checkout --orphan apk-builds
+          fi
+
+          git rm -rf . || true
           cp /tmp/apk-release/DeTodito.apk ./DeTodito.apk
           git add DeTodito.apk
 
@@ -104,4 +112,5 @@ jobs:
             git push origin apk-builds --force
             echo "✅ APK publicado exitosamente en la rama 'apk-builds'."
           fi
+
 
