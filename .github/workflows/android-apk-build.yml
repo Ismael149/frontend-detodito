@@ -45,9 +45,14 @@ jobs:
           distribution: 'zulu'
           java-version: '21'
 
-      # ── 7. Configurar Android SDK ───────────────────────────────────────────
+      # ── 7. Configurar Android SDK (usando el preinstalado en el runner) ─────
       - name: 🤖 Configurar Android SDK
-        uses: android-actions/setup-android@v3
+        run: |
+          echo "SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin" >> $GITHUB_PATH
+          echo "$ANDROID_SDK_ROOT/platform-tools" >> $GITHUB_PATH
+          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       # ── 8. Sincronizar activos web con el proyecto Android nativo ───────────
       - name: 🔄 Sincronizar Activos Capacitor (cap sync)
@@ -56,6 +61,8 @@ jobs:
       # ── 9. Compilar el APK con Gradle ───────────────────────────────────────
       - name: 📱 Compilar APK Debug
         working-directory: android
+        env:
+          ANDROID_SDK_ROOT: ${{ env.SDK_ROOT }}
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
@@ -81,6 +88,3 @@ jobs:
             - **Commit:** ${{ github.sha }}
             - **Fecha:** ${{ github.event.head_commit.timestamp }}
           files: android/app/build/outputs/apk/debug/app-debug.apk
-
-
-
