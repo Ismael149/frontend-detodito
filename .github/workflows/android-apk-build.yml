@@ -75,7 +75,7 @@ jobs:
           path: android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
 
-      # ── 11. Publicar Release 'latest' en GitHub Releases ───────────────────
+      # ── 11. Publicar Release 'latest' en GitHub Releases (repo actual) ──────
       - name: 🏷️ Publicar Release 'latest' en GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
@@ -88,3 +88,44 @@ jobs:
             - **Commit:** ${{ github.sha }}
             - **Fecha:** ${{ github.event.head_commit.timestamp }}
           files: android/app/build/outputs/apk/debug/app-debug.apk
+
+      # ── 12. Subir el APK al repositorio detodito-apk-releases ───────────────
+      - name: 📤 Publicar APK en repositorio detodito-apk-releases
+        env:
+          APK_DEPLOY_TOKEN: ${{ secrets.APK_DEPLOY_TOKEN }}
+        run: |
+          # Configurar git con el token
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+          # Clonar el repositorio de releases
+          git clone "https://x-access-token:${APK_DEPLOY_TOKEN}@github.com/Ismael149/detodito-apk-releases.git" apk-repo
+          cd apk-repo
+
+          # Copiar el APK con nombre de versión y con nombre fijo "latest"
+          cp "../android/app/build/outputs/apk/debug/app-debug.apk" "DeTodito-Build-${{ github.run_number }}.apk"
+          cp "../android/app/build/outputs/apk/debug/app-debug.apk" "DeTodito-Latest.apk"
+
+          # Actualizar README con info del último build
+          cat > README.md << 'EOF'
+          # 📱 DeTodito - APK Releases
+
+          Aquí encontrarás las versiones compiladas automáticamente de la app **DeTodito**.
+
+          ## ⬇️ Descargar última versión
+
+          👉 **[DeTodito-Latest.apk](./DeTodito-Latest.apk)**
+
+          ## 📋 Historial de builds
+
+          | Build | Archivo | Commit |
+          |-------|---------|--------|
+          | #${{ github.run_number }} | DeTodito-Build-${{ github.run_number }}.apk | ${{ github.sha }} |
+
+          > Compilado automáticamente por GitHub Actions desde [frontend-detodito](https://github.com/Ismael149/frontend-detodito)
+          EOF
+
+          # Subir al repositorio
+          git add -A
+          git commit -m "🤖 APK Build #${{ github.run_number }} - $(date +'%Y-%m-%d %H:%M')"
+          git push origin main
